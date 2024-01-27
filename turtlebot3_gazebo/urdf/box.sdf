@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!-- <robot name="box">
+    <link name="box_link">
+        <kinematic>true</kinematic>
+        <collision name="collision">
+            <geometry>
+                <box>
+                    <size>0.3 0.3 0.7</size>
+                </box>
+            </geometry>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>0.0</mu>
+                        <mu2>0.0</mu2>
+                    </ode>
+                </friction>
+            </surface>
+        </collision>
+
+        <visual name="visual">
+            <geometry>
+                <box>
+                    <size>0.3 0.3 0.7</size>
+                </box>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <mass value="1.0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        </inertial>
+    </link>
+</robot> -->
+<sdf version="1.4">
+    <model name="box">
+        <link name="box_link">
+            <kinematic>false</kinematic>
+            <inertial name="inertial">
+                <!-- <origin xyz="2 0 0" /> -->
+                <mass>1.0</mass>
+                <inertia>
+                    <ixx>0.17</ixx>
+                    <ixy>0.0</ixy>
+                    <ixz>0.0</ixz>
+                    <iyy>0.17</iyy>
+                    <iyz>0.0</iyz>
+                    <izz>0.17</izz>
+                </inertia>
+            </inertial>
+            <visual name="visual">
+                <!-- <origin xyz="2 0 1"/> -->
+                <geometry>
+                    <box>
+                        <size>0.3 0.3 0.3</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>Gazebo/Blue</script>
+                </material>
+            </visual>
+            <collision name="collision">
+                <!-- <origin xyz="2 0 1"/> -->
+                <geometry>
+                    <box>
+                        <size>0.3 0.3 0.3</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>0.0</mu>
+                            <mu2>0.0</mu2>
+                        </ode>
+                    </friction>
+                    <bounce>
+                        <restitution_coefficient>0.0</restitution_coefficient>
+                        <threshold>0.0</threshold>
+                    </bounce>
+                    <contact>
+                        <ode>
+                            <kp>2000000000</kp>
+                            <kd>1</kd>
+                            <max_vel>0.01</max_vel>
+                            <min_depth>0.00</min_depth>
+                        </ode>
+                    </contact>
+                </surface>
+            </collision>
+        </link>
+    </model>
+</sdf>
+<!-- <robot name="box">
+    <link name="box_link">
+        <gravity>1</gravity>
+        <kinematic>true</kinematic>
+        <inertial>
+            <inertia  ixx="0.17" ixy="0.0"  ixz="0.0"  iyy="0.17"  iyz="0.0"  izz="0.17"/>
+            <mass value="100.0"/>
+        </inertial>
+        <collision>
+            <max_contacts>0</max_contacts>
+            <geometry>
+                <box size="0.3 0.3 0.3" />
+            </geometry>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>0.0</mu>
+                        <mu2>0.0</mu2>
+                    </ode>
+                </friction>
+                <bounce>
+                    <restitution_coefficient>0.0</restitution_coefficient>
+                    <threshold>0.0</threshold>
+                </bounce>
+                <contact>
+                    <ode>
+                        <kp>2000000000</kp>
+                        <kd>1</kd>
+                        <max_vel>0.01</max_vel>
+                        <min_depth>0.00</min_depth>
+                    </ode>
+                </contact>
+            </surface>
+        </collision>
+        <visual>
+            <geometry>
+                <box size="0.3 0.3 0.3" />
+            </geometry>
+        </visual>
+    </link>
+    <gazebo reference="box_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+</robot> -->

@@ -12,10 +12,12 @@ add_compile_options(-std=c++11)
 # Find catkin packages and libraries for catkin and system dependencies
 ################################################################################
 find_package(catkin REQUIRED COMPONENTS
+  rospy
   roscpp
   std_msgs
   sensor_msgs
   geometry_msgs
+  people_msgs
   nav_msgs
   tf
   gazebo_ros
@@ -26,6 +28,7 @@ find_package(gazebo REQUIRED)
 ################################################################################
 # Setup for python modules and scripts
 ################################################################################
+catkin_python_setup()
 
 ################################################################################
 # Declare ROS messages, services and actions
@@ -40,7 +43,7 @@ find_package(gazebo REQUIRED)
 ################################################################################
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros
+  CATKIN_DEPENDS rospy roscpp std_msgs sensor_msgs geometry_msgs people_msgs nav_msgs tf gazebo_ros
   DEPENDS GAZEBO
 )
 
